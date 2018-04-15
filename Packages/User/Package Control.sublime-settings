@@ -1,0 +1,15 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Boxy Theme",
+		"Clang Format",
+		"CMake",
+		"CUDA C++",
+		"Package Control",
+		"Python Flake8 Lint"
+	]
+}
