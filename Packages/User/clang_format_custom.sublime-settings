@@ -46,14 +46,14 @@
     //     int aaaa = 12;
     //     int b    = 23;
     //     int ccc  = 23;
- "AlignConsecutiveAssignments": true,
+ "AlignConsecutiveAssignments": false,
 
     // If true, aligns consecutive declarations.
     // This will align the declaration names of consecutive lines. This will result in formattings like
     // int         aaaa = 12;
     // float       b = 23;
     // std::string ccc = 23;
-"AlignConsecutiveDeclarations": true,
+"AlignConsecutiveDeclarations": false,
 
     // If true, aligns escaped newlines as far left as possible. Otherwise puts
     // them into the right-most column.
@@ -177,7 +177,7 @@
     // The column limit. A column limit of 0 means that there is no column
     // limit. In this case, clang-format will respect the input’s line breaking
     // decisions within statements unless they contradict other rules.
- "ColumnLimit": 120,
+ "ColumnLimit": 90,
 
     // A regular expression that describes comments with special meaning, which
     // should not be split into lines or otherwise changed.
