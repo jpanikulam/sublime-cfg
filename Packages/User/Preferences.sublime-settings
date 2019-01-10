@@ -1,5 +1,13 @@
 {
 	"color_scheme": "Packages/User/Monokai (Flake8Lint).tmTheme",
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"bin"
+	],
 	"font_size": 11,
 	"ignored_packages":
 	[

@@ -10,6 +10,7 @@
 		"CMake",
 		"CUDA C++",
 		"Package Control",
-		"Python Flake8 Lint"
+		"Python Flake8 Lint",
+		"Shader Syntax (GLSL HLSL Cg)"
 	]
 }

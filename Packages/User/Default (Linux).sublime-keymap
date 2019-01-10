@@ -23,5 +23,8 @@
     { "keys": ["alt+7"], "command": "focus_group", "args": { "group": 6 } },
     { "keys": ["alt+8"], "command": "focus_group", "args": { "group": 7 } },
     { "keys": ["alt+9"], "command": "focus_group", "args": { "group": 8 } },
+    { "keys": ["ctrl+home"], "command": "unbound"},
+    { "keys": ["ctrl+end"], "command": "unbound"},
+    { "keys": ["ctrl+shift+x"], "command": "clone_file"},
 ]
 

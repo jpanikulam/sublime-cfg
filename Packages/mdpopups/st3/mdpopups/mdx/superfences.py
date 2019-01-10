@@ -1,8 +1,8 @@
 """
-Superfences.
+SuperFences.
 
 pymdownx.superfences
-Neseted Fenced Code Blocks
+Nested Fenced Code Blocks
 
 This is a modification of the original Fenced Code Extension.
 Algorithm has been rewritten to allow for fenced blocks in blockquotes,
@@ -35,8 +35,6 @@ from markdown.preprocessors import Preprocessor
 from markdown.blockprocessors import CodeBlockProcessor
 from markdown import util as md_util
 from . import highlight as hl
-from .util import PymdownxDeprecationWarning
-import warnings
 import re
 
 NESTED_FENCE_START = r'''(?x)
@@ -140,7 +138,7 @@ def fence_div_format(source, language, css_class):
 
 
 class SuperFencesCodeExtension(Extension):
-    """Superfences code block extension."""
+    """SuperFences code block extension."""
 
     def __init__(self, *args, **kwargs):
         """Initialize."""
@@ -148,8 +146,6 @@ class SuperFencesCodeExtension(Extension):
         self.superfences = []
         self.config = {
             'disable_indented_code_blocks': [False, "Disable indented code blocks - Default: False"],
-            'uml_flow': [True, "Enable flowcharts - Default: True"],
-            'uml_sequence': [True, "Enable sequence diagrams - Default: True"],
             'custom_fences': [
                 [
                     {'name': 'flow', 'class': 'uml-flowchart'},
@@ -158,11 +154,6 @@ class SuperFencesCodeExtension(Extension):
                 'Specify custom fences. Default: See documentation.'
             ],
             'highlight_code': [True, "Highlight code - Default: True"],
-            'use_codehilite_settings': [
-                None,
-                "Deprecatd and does nothing. "
-                "- Default: None"
-            ],
             'css_class': [
                 '',
                 "Set class name for wrapper element. The default of CodeHilite or Highlight will be used"
@@ -173,7 +164,7 @@ class SuperFencesCodeExtension(Extension):
         super(SuperFencesCodeExtension, self).__init__(*args, **kwargs)
 
     def extend_super_fences(self, name, formatter):
-        """Extend superfences with the given name, language, and formatter."""
+        """Extend SuperFences with the given name, language, and formatter."""
 
         self.superfences.append(
             {
@@ -184,7 +175,7 @@ class SuperFencesCodeExtension(Extension):
         )
 
     def extendMarkdown(self, md, md_globals):
-        """Add FencedBlockPreprocessor to the Markdown instance."""
+        """Add fenced block preprocessor to the Markdown instance."""
 
         # Not super yet, so let's make it super
         md.registerExtension(self)
@@ -199,15 +190,6 @@ class SuperFencesCodeExtension(Extension):
                 "formatter": None
             }
         )
-
-        if config.get('use_codehilite_settings'):  # pragma: no coverage
-            warnings.warn(
-                "'use_codehilite_settings' is deprecated and does nothing.\n"
-                "\nCodeHilite settings will only be used if CodeHilite is configured\n"
-                " and 'pymdownx.highlight' is not configured.\n"
-                "Please discontinue use of this setting as it will be removed in the future.",
-                PymdownxDeprecationWarning
-            )
 
         # UML blocks
         custom_fences = config.get('custom_fences', [])
@@ -274,12 +256,12 @@ class SuperFencesBlockPreprocessor(Preprocessor):
         self.codehilite_conf = {}
 
     def rebuild_block(self, lines):
-        """Deindent the fenced block lines."""
+        """Dedent the fenced block lines."""
 
         return '\n'.join([line[self.ws_len:] for line in lines])
 
     def get_hl_settings(self):
-        """Check for code hilite extension to get its config."""
+        """Check for CodeHilite extension to get its config."""
 
         if not self.checked_hl_settings:
             self.checked_hl_settings = True
@@ -458,7 +440,7 @@ class SuperFencesBlockPreprocessor(Preprocessor):
         """
         Syntax highlight the code block.
 
-        If config is not empty, then the codehlite extension
+        If config is not empty, then the CodeHilite extension
         is enabled, so we call into it to highlight the code.
         """
 
@@ -521,7 +503,7 @@ class SuperFencesBlockPreprocessor(Preprocessor):
 
 
 class SuperFencesCodeBlockProcessor(CodeBlockProcessor):
-    """Process idented code blocks to see if we accidentaly processed its content as a fenced block."""
+    """Process indented code blocks to see if we accidentally processed its content as a fenced block."""
 
     FENCED_BLOCK_RE = re.compile(
         r'^([\> ]*)%s(%s)%s$' % (

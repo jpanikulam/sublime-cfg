@@ -1,5 +1,16 @@
 {
-    "binary": "/home/jacob/repos/llvm/clang-format",
-    "languages": ["C", "C++", "C++11", "JavaScript", "Objective-C", "Objective-C++", "CUDA C++", "cuda-C++", "CUDA-C++"],
-    "style": "Custom",
+	"binary": "/home/jacob/repos/llvm/clang-format",
+	"languages":
+	[
+		"C",
+		"C++",
+		"C++11",
+		"JavaScript",
+		"Objective-C",
+		"Objective-C++",
+		"CUDA C++",
+		"cuda-C++",
+		"CUDA-C++"
+	],
+	"style": "File"
 }

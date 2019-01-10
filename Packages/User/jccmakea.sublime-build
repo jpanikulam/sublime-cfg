@@ -2,5 +2,6 @@
     "cmd": ["make", "-j", "4"],
     "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
     // "working_dir": "$project_path/bin",
+    "file_patterns": ["*.cc", "*.hh", "*.cu"],
     "working_dir": "/home/jacob/repos/experiments/bin"
 }
